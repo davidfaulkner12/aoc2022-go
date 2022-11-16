@@ -35,7 +35,7 @@ func p2(s string) int64 {
 	return countIncreasing(windows)
 }
 
-var Day2022_01 = ProblemSet{
+var Day2021_01 = ProblemSet{
 	Problem1: p1,
 	Problem2: p2,
 }

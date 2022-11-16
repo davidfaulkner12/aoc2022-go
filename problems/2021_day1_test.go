@@ -30,17 +30,13 @@ func TestP2(t *testing.T) {
 }
 
 func TestActualProblem(t *testing.T) {
-	b, err := os.ReadFile("../data/day1.txt")
-
+	b, err := os.ReadFile("../data/2021-day1.txt")
 	require.Nil(t, err)
-
 	s := string(b)
 
-	ps := Day2022_01
-
-	ans := ps.Problem1(s)
+	ans := Day2021_01.Problem1(s)
 	assert.Equal(t, int64(1759), ans)
 
-	ans = ps.Problem2(s)
+	ans = Day2021_01.Problem2(s)
 	assert.Equal(t, int64(1805), ans)
 }

@@ -6,8 +6,8 @@ import (
 	"os"
 )
 
-var ps = map[string]problems.ProblemSet{
-	"2022-01": problems.Day2022_01,
+var Problems = map[string]problems.ProblemSet{
+	"2021-01": problems.Day2021_01,
 }
 
 func main() {
@@ -16,7 +16,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	day, ok := ps[os.Args[1]]
+	day, ok := Problems[os.Args[1]]
 
 	if !ok {
 		fmt.Printf("No value found for %s\n", os.Args[1])
@@ -27,6 +27,7 @@ func main() {
 
 	if err != nil {
 		fmt.Printf("Unable to read file %s\n", os.Args[2])
+		os.Exit(1)
 	}
 
 	s := string(b)
