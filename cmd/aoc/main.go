@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-var ps = map[string]problems.DayProblems{
+var ps = map[string]problems.ProblemSet{
 	"2022-01": problems.Day2022_01,
 }
 
@@ -16,7 +16,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	f, ok := ps[os.Args[1]]
+	day, ok := ps[os.Args[1]]
 
 	if !ok {
 		fmt.Printf("No value found for %s\n", os.Args[1])
@@ -31,7 +31,6 @@ func main() {
 
 	s := string(b)
 
-	day := f()
 	fmt.Printf("Problem 1: %d\n", day.Problem1(s))
 	fmt.Printf("Problem 2: %d\n", day.Problem2(s))
 }

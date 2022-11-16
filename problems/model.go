@@ -6,5 +6,3 @@ type ProblemSet struct {
 	Problem1 Problem
 	Problem2 Problem
 }
-
-type DayProblems func() ProblemSet

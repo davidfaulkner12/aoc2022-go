@@ -36,7 +36,7 @@ func TestActualProblem(t *testing.T) {
 
 	s := string(b)
 
-	ps := Day2022_01()
+	ps := Day2022_01
 
 	ans := ps.Problem1(s)
 	assert.Equal(t, int64(1759), ans)
