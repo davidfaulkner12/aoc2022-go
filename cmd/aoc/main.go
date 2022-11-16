@@ -11,8 +11,8 @@ var ps = map[string]problems.DayProblems{
 }
 
 func main() {
-	if len(os.Args) != 2 {
-		fmt.Println("Usage: aoc problem")
+	if len(os.Args) != 3 {
+		fmt.Println("Usage: aoc problem file")
 		os.Exit(1)
 	}
 
@@ -23,8 +23,15 @@ func main() {
 		os.Exit(1)
 	}
 
-	day := f()
-	fmt.Println(day.Problem1("bob"))
-	fmt.Println(day.Problem2("dole"))
+	b, err := os.ReadFile(os.Args[2])
 
+	if err != nil {
+		fmt.Printf("Unable to read file %s\n", os.Args[2])
+	}
+
+	s := string(b)
+
+	day := f()
+	fmt.Printf("Problem 1: %d\n", day.Problem1(s))
+	fmt.Printf("Problem 2: %d\n", day.Problem2(s))
 }
