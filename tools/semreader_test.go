@@ -28,20 +28,20 @@ func TestRead(t *testing.T) {
 }
 
 func TestGroupedRead(t *testing.T) {
-    type test struct {
-        input string
-        want [][]int64
-    }
+	type test struct {
+		input string
+		want  [][]int64
+	}
 
-    tests := []test{
-        {input: "38", want: [][]int64{ { 38 } }},
-        {input: "38\n42", want: [][]int64{ { 38, 42 } }},
-        {input: "38\n42\n\n59\n", want: [][]int64{ { 38, 42 }, {59 } }},
-    }
+	tests := []test{
+		{input: "38", want: [][]int64{{38}}},
+		{input: "38\n42", want: [][]int64{{38, 42}}},
+		{input: "38\n42\n\n59\n", want: [][]int64{{38, 42}, {59}}},
+	}
 
-    for _, tc := range tests {
-    	got, ok := ReadNumsGroupedByLines(tc.input)
+	for _, tc := range tests {
+		got, ok := ReadNumsGroupedByLines(tc.input)
 		assert.Nil(t, ok, "Error was not nil")
 		assert.Equal(t, tc.want, got, "Slices were not equal")
-    }
+	}
 }

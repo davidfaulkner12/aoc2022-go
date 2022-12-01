@@ -1,28 +1,27 @@
 package problems
 
 import (
+	"container/heap"
 	"github.com/davidfaulkner12/aoc2022/tools"
-  	"container/heap"
 )
 
 func day1Prob1(s string) int64 {
-    xss, _ := tools.ReadNumsGroupedByLines(s)
+	xss, _ := tools.ReadNumsGroupedByLines(s)
 
-    var max_calories int64 = 0
+	var max_calories int64 = 0
 
-    for _, xs := range xss {
-        var sum int64 = 0
-        for _, x := range xs {
-            sum += x
-        }
-        if sum > max_calories {
-            max_calories = sum
-        }
-    }
+	for _, xs := range xss {
+		var sum int64 = 0
+		for _, x := range xs {
+			sum += x
+		}
+		if sum > max_calories {
+			max_calories = sum
+		}
+	}
 
 	return max_calories
 }
-
 
 // An IntHeap is a max-heap of ints.
 type IntHeap []int64
@@ -46,18 +45,18 @@ func (h *IntHeap) Pop() any {
 }
 
 func day1Prob2(s string) int64 {
-    xss, _ := tools.ReadNumsGroupedByLines(s)
+	xss, _ := tools.ReadNumsGroupedByLines(s)
 
-    h := &IntHeap{}
-    heap.Init(h)
+	h := &IntHeap{}
+	heap.Init(h)
 
-    for _, xs := range xss {
-        var sum int64 = 0
-        for _, x := range xs {
-            sum += x
-        }
-        heap.Push(h, sum)
-    }
+	for _, xs := range xss {
+		var sum int64 = 0
+		for _, x := range xs {
+			sum += x
+		}
+		heap.Push(h, sum)
+	}
 
 	return heap.Pop(h).(int64) + heap.Pop(h).(int64) + heap.Pop(h).(int64)
 }
