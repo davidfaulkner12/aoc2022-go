@@ -8,6 +8,7 @@ import (
 
 var Problems = map[string]problems.ProblemSet{
 	"2021-01": problems.Day2021_01,
+    "01": problems.Day01,
 }
 
 func main() {
