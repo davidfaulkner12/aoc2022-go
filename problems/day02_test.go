@@ -13,7 +13,7 @@ B X
 C Z
 `
 
-func Day2ParserTest(t *testing.T) {
+func TestDay2Parser(t *testing.T) {
 	type test struct {
 		input      string
 		want       RochambeauGame
@@ -30,7 +30,7 @@ func Day2ParserTest(t *testing.T) {
 	for _, tc := range tests {
 		got, ok := parser.ParseString("", tc.input)
 		assert.Nil(t, ok, "Error was not nil")
-		assert.Equal(t, tc.want, got, "Structs were not equal")
+		assert.Equal(t, tc.want, *got, "Structs were not equal")
 		gotLeft, gotRight := got.Score()
 		assert.Equal(t, tc.leftScore, gotLeft, "Left score was unexpected")
 		assert.Equal(t, tc.rightScore, gotRight, "Right score was unexpected")

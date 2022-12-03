@@ -48,22 +48,13 @@ func (r RochambeauGame) Score() (int64, int64) {
 	var left, right int64
 
 	switch {
-	case r.Left == Paper && r.Right == Rock:
-		left = win
-	case r.Left == Paper && r.Right == Scissors:
-		right = win
-	case r.Left == Scissors && r.Right == Paper:
-		left = win
-	case r.Left == Scissors && r.Right == Rock:
-		right = win
-	case r.Left == Rock && r.Right == Scissors:
-		left = win
-	case r.Left == Rock && r.Right == Paper:
-		right = win
-	// Draw
-	default:
+	case r.Left == r.Right:
 		left = draw
 		right = draw
+	case r.Left.defeats() == r.Right:
+		left = win
+	default:
+		right = win
 	}
 
 	return left + int64(r.Left), right + int64(r.Right)
