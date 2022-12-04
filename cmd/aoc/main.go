@@ -10,6 +10,8 @@ var Problems = map[string]problems.ProblemSet{
 	"2021-01": problems.Day2021_01,
 	"01":      problems.Day01,
 	"02":      problems.Day02,
+	"03":      problems.Day03,
+	"04":      problems.Day04,
 }
 
 func main() {
