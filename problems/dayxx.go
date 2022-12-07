@@ -2,12 +2,12 @@ package problems
 
 import ()
 
-func dayXProb1(s string) int64 {
-	return 0
+func dayXProb1(s string) interface{} {
+	return int64(0)
 }
 
-func dayXProb2(s string) int64 {
-	return 0
+func dayXProb2(s string) interface{} {
+	return int64(0)
 }
 
 var DayX = ProblemSet{

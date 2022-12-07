@@ -12,6 +12,8 @@ var Problems = map[string]problems.ProblemSet{
 	"02":      problems.Day02,
 	"03":      problems.Day03,
 	"04":      problems.Day04,
+	"05":      problems.Day05,
+	"06":      problems.Day06,
 }
 
 func main() {
@@ -36,6 +38,6 @@ func main() {
 
 	s := string(b)
 
-	fmt.Printf("Problem 1: %d\n", day.Problem1(s))
-	fmt.Printf("Problem 2: %d\n", day.Problem2(s))
+	fmt.Printf("Problem 1: %v\n", day.Problem1(s))
+	fmt.Printf("Problem 2: %v\n", day.Problem2(s))
 }

@@ -27,7 +27,7 @@ func splitRucksack(s string) (mapset.Set[rune], mapset.Set[rune]) {
 	return s1, s2
 }
 
-func day3Prob1(s string) int64 {
+func day3Prob1(s string) interface{} {
 	rows := strings.Split(s, "\n")
 	scores := make([]int64, len(rows))
 
@@ -58,7 +58,7 @@ func day3Prob1(s string) int64 {
 	return sum
 }
 
-func day3Prob2(s string) int64 {
+func day3Prob2(s string) interface{} {
 	rows := strings.Split(s, "\n")
 
 	scores := make([]int64, len(rows)/3)

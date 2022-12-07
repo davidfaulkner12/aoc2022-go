@@ -5,7 +5,7 @@ import (
 	"github.com/davidfaulkner12/aoc2022/tools"
 )
 
-func day1Prob1(s string) int64 {
+func day1Prob1(s string) interface{} {
 	xss, _ := tools.ReadNumsGroupedByLines(s)
 
 	var max_calories int64 = 0
@@ -44,7 +44,7 @@ func (h *IntHeap) Pop() any {
 	return x
 }
 
-func day1Prob2(s string) int64 {
+func day1Prob2(s string) interface{} {
 	xss, _ := tools.ReadNumsGroupedByLines(s)
 
 	h := &IntHeap{}

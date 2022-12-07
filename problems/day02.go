@@ -127,11 +127,11 @@ func runProblem(s string, scorePart2 bool) int64 {
 	return rightTotal
 }
 
-func day2Prob1(s string) int64 {
+func day2Prob1(s string) interface{} {
 	return runProblem(s, false)
 }
 
-func day2Prob2(s string) int64 {
+func day2Prob2(s string) interface{} {
 	return runProblem(s, true)
 }
 

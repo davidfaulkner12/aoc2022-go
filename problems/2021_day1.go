@@ -16,13 +16,13 @@ func countIncreasing(xs []int64) int64 {
 	return count
 }
 
-func p1(s string) int64 {
+func p1(s string) interface{} {
 	xs, _ := tools.ReadNums(s)
 
 	return countIncreasing(xs)
 }
 
-func p2(s string) int64 {
+func p2(s string) interface{} {
 	xs, _ := tools.ReadNums(s)
 
 	windows := []int64{}

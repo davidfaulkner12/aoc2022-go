@@ -91,11 +91,11 @@ func day4(s string, cfn compareFn) int64 {
 	return count
 }
 
-func day4Prob1(s string) int64 {
+func day4Prob1(s string) interface{} {
 	return day4(s, contains)
 }
 
-func day4Prob2(s string) int64 {
+func day4Prob2(s string) interface{} {
 	return day4(s, overlaps)
 }
 
